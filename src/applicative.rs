@@ -6,7 +6,7 @@ pub trait Applicative {
 
     fn pure_a<B>(t: B) -> Self::This<B>;
 
-    fn map2<F, B, C>(self, mb: Self::This<B>, f: F) -> Self::This<C>
+    fn map2<B, C, F>(self, mb: Self::This<B>, f: F) -> Self::This<C>
     where
         F: FnMut(Self::A, B) -> C;
 }

@@ -20,7 +20,7 @@ impl<M: Monad> Applicative for M {
         <M as Monad>::pure_m(t)
     }
 
-    fn map2<F, B, C>(self, mb: Self::This<B>, f: F) -> Self::This<C>
+    fn map2<B, C, F>(self, mb: Self::This<B>, f: F) -> Self::This<C>
     where
         F: FnMut(Self::A, B) -> C
     {
